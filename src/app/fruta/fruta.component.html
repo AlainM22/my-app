@@ -1,10 +1,46 @@
-<p>Componente generado con el siguiente comando:</p>
-<p><code>ng generate component {{titulo}}</code></p>
-<p><code>ng g c {{titulo}}</code></p>
-<p>*recordar declararlo en <b>app.module.ts</b></p>
+<div class="container mb-3">
+  <div class="card">
+      <div class="card-header">
+          <div class="row">
+              <div class="col-12">
+                  <h2>Nuestro primer Componente <b>FRUTA</b></h2>
+              </div>
+          </div> <!-- .row -->
+      </div> <!-- .card-header -->
+      <div class="card-body">
+          <div class="row">
+              <div class="col-1"></div> <!-- .col-1 -->
+              <div class="col-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <p>Componente generado con el siguiente comando:</p>
+                          <p><code>ng generate component {{titulo}}</code></p>
+                          <p><code>ng g c {{titulo}}</code></p>
+                          <p>*recordar declararlo en <b>app.module.ts</b></p>
+                      </div>
+                  </div>
+              </div> <!-- .col-4 -->
 
-<h3>Listado de frutal</h3>
-<p>Usamos la diretiva <b>*ngFor</b></p>
-<ol>
-  <li *ngFor="let f of frutas">{{f}}</li>
-</ol>
+              <div class="col-2"></div> <!-- .col-2 -->
+
+              <div class="col-4">
+                  <div class="card">
+                      <div class="card-header">
+                          <h3>Listado de frutas</h3>
+                      </div>
+                      <div class="card-body">
+                          <p>Usamos la diretiva <b>*ngFor</b></p>
+                          <ol>
+                            <li *ngFor="let f of frutas">{{f}}</li>
+                          </ol>
+                      </div>
+                  </div>
+              </div> <!-- .col-4 -->
+          
+              <div class="col-1"></div> <!-- .col-1 -->
+          </div> <!-- .row -->
+      </div> <!-- card-body -->
+  </div><!-- .card-->
+</div> <!-- .container -->
+
+
