@@ -1,8 +1,8 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="#">Angular</a></h5>
+    <h5 class="my-0 mr-md-auto font-weight-normal"><a [routerLink]="['/home']" routerLinkActive="activo">Angular</a></h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#">1º Componente</a>
-      <a class="p-2 text-dark" href="#">Flujo Informacion</a>
+      <a class="p-2 text-dark" [routerLink]="['/fruta']" routerLinkActive="activo">1º Componente</a>
+      <a class="p-2 text-dark" [routerLink]="['/flujo']" routerLinkActive="activo">Flujo Informacion</a>
     </nav>
 </div>
 
