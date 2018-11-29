@@ -2,23 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-// Routing
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// Componentes
 import { FrutaComponent } from './components/fruta/fruta.component';
 import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
 import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
-import { VideojuegoPipe } from './pipes/videojuego.pipe';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
 
 // Pipes
-import { PipeComponent } from './components/pipe/pipe.component';
+import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
-// Providers o Servicios
+// Providers o servicios
 
 
 @NgModule({
@@ -31,7 +31,9 @@ import { FrutaCardComponent } from './components/fruta-card/fruta-card.component
     VideojuegoDetalleComponent,
     PipeComponent,
     VideojuegoPipe,
-    FrutaCardComponent
+    EjercicioFrutasComponent,
+    FrutaCardComponent,
+    ComparadorComponent
   ],
   imports: [
     BrowserModule,

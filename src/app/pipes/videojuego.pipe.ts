@@ -7,16 +7,19 @@ import { Videojuego } from '../model/videojuego';
 export class VideojuegoPipe implements PipeTransform {
 
   transform(videojuegos: Videojuego[], alquilado: boolean): any {
-    /*console.debug('VideojuegoPipe transform');
+    console.debug('VideojuegoPipe transform');
+    /*
     const resul: Videojuego[] = [];
 
     videojuegos.forEach( el => {
       if ( el.alquilado === alquilado ) {
         resul.push(el);
       }
-    });*/
+    });
 
-    return videojuegos.filter(v => v.alquilado === alquilado);
+    return resul;
+    */
+   return videojuegos.filter( v => v.alquilado === alquilado);
   }
 
 }
