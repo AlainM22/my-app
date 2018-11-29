@@ -7,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrutaComponent implements OnInit {
 
-  //Atributos declarar y no inicializar
+  // Atributos declarar y no inicializar
   titulo: string;
   frutas: string[];
 
-
-  constructor() { 
+  constructor() {
     console.trace('FrutaComponent constructor');
     this.titulo = 'fruta';
-    this.frutas = ['fresa', 'platano', 'mango', 'kiwi']
+    this.frutas = ['fresa', 'platano', 'mango', 'kiwi'];
   }
 
   ngOnInit() {

@@ -5,7 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'Welcome to';
-  autor = 'Alain';
+
+  title = 'Primera App Angular';
+  autor = 'Ander';
+
+
 }

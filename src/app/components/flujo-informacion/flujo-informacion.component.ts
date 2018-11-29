@@ -13,23 +13,23 @@ export class FlujoInformacionComponent implements OnInit {
   textoBoton: string;
   nombre: string;
 
-  constructor() { 
+  constructor() {
     console.trace('FlujoInformacionComponent constructor');
-    this.titulo = "Flujo de la información entre la Vista Modelo y Modelo vista";
+    this.titulo = 'Flujo de la información en la Vista Modelo y Modelo Vista';
     this.visible = true;
-    this.clase = 'remarcar';
+    this.clase = 'remarcar2';
     this.textoBoton = 'Ocultar';
-    this.nombre = "";
+    this.nombre = '';
   }
 
   ngOnInit() {
     console.trace('FlujoInformacionComponent ngOnInit');
   }
 
-  showHide(){
-    console.trace('Click showHide button');
-    this.visible = (this.visible)?false:true;
-    this.textoBoton = (this.visible)?'Ocultar':'Mostrar';
+  showHide() {
+    console.trace('click showHide button');
+    this.visible = (this.visible) ? false : true;
+    this.textoBoton = (this.visible) ? 'Ocultar' : 'Mostrar';
   }
 
 }
