@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Componentes propios
 import { FrutaComponent } from './components/fruta/fruta.component';
 import { FlujoInformacionComponent } from './components/flujo-informacion/flujo-informacion.component';
 import { HomeComponent } from './components/home/home.component';

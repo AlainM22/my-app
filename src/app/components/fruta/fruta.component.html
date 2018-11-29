@@ -8,3 +8,13 @@
 <ol>
   <li *ngFor="let f of frutas">{{f}}</li>
 </ol>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      {{frutas | json}}
+
+      <app-fruta-card></app-fruta-card>
+    </div>
+  </div>
+</div>
