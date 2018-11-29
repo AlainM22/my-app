@@ -11,9 +11,14 @@ export class ComparadorComponent implements OnInit {
   frutas: Fruta[];
   f1: Fruta;
   f2: Fruta;
+  compPrecio: string;
+  compCalorias: string;
 
   constructor() { 
     console.trace('Constructor comparadorComponent');
+    this.compPrecio = "";
+    this.compCalorias = "";
+    
     this.f1 = new Fruta();
     this.f2 = new Fruta();
     this.loadArrayFrutas();

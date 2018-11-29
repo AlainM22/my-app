@@ -1,22 +1,20 @@
 <div class="container">
-  <div class="row">
+  <div class="row mb-3">
 
-    <div class="col-4">
+    <div class="col-4"> <!-- Frutas -->
         <div class="card">
             <div class="card-header">
                 <h2 class="card-title">Frutas</h2>
             </div>
             <div class="card-body">
-
                 <ol>
                   <li *ngFor="let f of frutas"><button (click)="seleccionar(f)" class="btn btn-outline-primary mb-2 w-75">{{f.nombre}}</button></li>
                 </ol>
-
             </div>
         </div><!-- .card -->
     </div><!-- .col-5-->
 
-    <div class="col-4">
+    <div class="col-4"> <!-- Fruta 1 -->
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">1ª Fruta</h3>
@@ -27,7 +25,7 @@
         </div>
     </div><!-- .col-4 -->
 
-    <div class="col-4">
+    <div class="col-4"> <!-- Fruta 2 -->
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">2ª Fruta</h3>
@@ -37,5 +35,19 @@
             </div>
         </div>
     </div><!-- .col-4 -->
-  </div>
+  </div><!-- .row -->
+
+  <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Comparaciones</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Precio:</p>
+                <p class="card-text">Calorias:</p>
+            </div>
+        </div>
+    </div>
+  </div><!-- .row -->
 </div>
