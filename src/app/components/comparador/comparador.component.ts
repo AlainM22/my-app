@@ -34,10 +34,11 @@ export class ComparadorComponent implements OnInit {
 
   ngOnInit() {
     console.trace('ComparadorComponent ngOnInit');
-    this.frutas = this.frutaService.getAll();
-
-    this.f1 =  this.frutas[0];
-    this.f2 =  this.frutas[1];
+    this.frutaService.getAll().subscribe(data =>{
+      this.frutas = data.map(el => el);
+      this.f1 =  this.frutas[0];
+      this.f2 =  this.frutas[1];
+    })
   }
 
   seleccionar( fruta: Fruta ) {
@@ -54,24 +55,24 @@ export class ComparadorComponent implements OnInit {
     return total;
   }
 
-  /*sumarProducto(p: Producto, index: number){    
+  sumarProducto(p: Fruta, index: number){    
     p.cantidad++;
     this.carrito[index] = p;
-  }*/
+  }
 
-  /*restarProducto(p: Producto, index: number){
+  restarProducto(p: Fruta, index: number){
     if ( p.cantidad > 1 ){
       p.cantidad--;
       this.carrito[index] = p;
     }else{
       this.eliminarProducto(p, index);
     }
-  }*/
+  }
 
-  /*eliminarProducto(p: Producto, index: number){
+  eliminarProducto(p: Fruta, index: number){
     p.cantidad = 1;
     this.carrito.splice(index,1);
-  }*/
+  }
 
   actualizarCarro( event: Event) {
     console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
