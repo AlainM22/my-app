@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
+import { FrutaService } from 'src/app/providers/fruta.service';
+
 
 @Component({
   selector: 'app-comparador',
@@ -11,21 +13,31 @@ export class ComparadorComponent implements OnInit {
   frutas: Fruta[];
   f1: Fruta;
   f2: Fruta;
+  precioTotal: number;
+  cantidad: number;
+  carrito: Fruta[];
 
-  constructor() {
+  /* FrutaService es @Injectable por lo cual debemos declararlo en el constructor, 
+    nunca haremos NEW y no usarlo dentro del constructor, mejor en ngOnInit */
+
+  constructor(public frutaService: FrutaService) {
     console.trace('ComparadorComponent constructor');
     this.frutas = [];
     this.f1 = new Fruta();
     this.f2 = new Fruta();
-    this.loadFrutas();
 
-    this.f1 =  this.frutas[0];
-    this.f2 =  this.frutas[1];
+    this.precioTotal = 27.58;
+    this.cantidad = 3;
+    this.carrito = [];
 
   }
 
   ngOnInit() {
     console.trace('ComparadorComponent ngOnInit');
+    this.frutas = this.frutaService.getAll();
+
+    this.f1 =  this.frutas[0];
+    this.f2 =  this.frutas[1];
   }
 
   seleccionar( fruta: Fruta ) {
@@ -34,41 +46,45 @@ export class ComparadorComponent implements OnInit {
     this.f1 = fruta;
   }
 
-  actualizarCarro( event: Event) {
-    console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
-    console.debug('Parametro frutaClick = %o' , event['frutaClick'] );
+  getTotal(): number{
+    let total = 0;
+    this.carrito.forEach( el => {
+      total += el.precio * el.cantidad;
+    })
+    return total;
   }
 
-  loadFrutas() {
-    console.trace('ComparadorComponent loadFrutas');
-    let f: Fruta;
+  sumarProducto(p: Producto, index: number){    
+    p.cantidad++;
+    this.carrito[index] = p;
+  }
 
-    f = new Fruta();
-    f.nombre = 'Banana';
-    f.precio = 3.15;
-    f.calorias = 500;
-    f.colores = ['Amarillo', 'Negro'];
-    f.oferta = true;
-    f.imagen = 'http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg';
-    this.frutas.push(f);
+  restarProducto(p: Producto, index: number){
+    if ( p.cantidad > 1 ){
+      p.cantidad--;
+      this.carrito[index] = p;
+    }else{
+      this.eliminarProducto(p, index);
+    }
+  }
 
-    f = new Fruta();
-    f.nombre = 'Pera';
-    f.precio = 2;
-    f.calorias = 350;
-    f.colores = ['Amarillo', 'Verde'];
-    f.imagen = 'http://www.cajanature.com/405-large_default/pera-ecologica-.jpg';
-    this.frutas.push(f);
+  eliminarProducto(p: Producto, index: number){
+    p.cantidad = 1;
+    this.carrito.splice(index,1);
+  }
 
-    f = new Fruta();
-    f.nombre = 'Fresa';
-    f.precio = 0.75;
-    f.calorias = 100;
-    f.colores = ['Rosa', 'Rojo', 'Verde'];
-    f.oferta = true;
-    f.imagen = 'http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg';
-    this.frutas.push(f);
-
+  actualizarCarro( event: Event) {
+    console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
+    let frutaClick = event['frutaClick'];
+    console.debug('Parametro frutaClick = %o' , frutaClick );
+    let f = this.carrito.find( f => f.nombre === frutaClick.nombre);
+    if ( f ){
+      f.cantidad ++;
+      let index = this.carrito.indexOf(frutaClick);
+      this.carrito[index]= f;      
+    }else{
+      this.carrito.push(frutaClick);
+    }  
   }
 
 }

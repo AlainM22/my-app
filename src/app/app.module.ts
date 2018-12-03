@@ -12,14 +12,14 @@ import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
-
-// Pipes
-import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 
-// Providers o servicios
+// Pipes
+import { VideojuegoPipe } from './pipes/videojuego.pipe';
 
+// Providers o servicios
+import { FrutaService } from './providers/fruta.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { ComparadorComponent } from './components/comparador/comparador.componen
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  FrutaService
 })
 export class AppModule { }
