@@ -1,6 +1,8 @@
+// Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
 import { AppRoutingModule } from './app-routing.module';
@@ -14,12 +16,15 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercicio-frutas.component';
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 
 // Providers o servicios
+import { TareaService } from './providers/tarea.service';
 import { FrutaService } from './providers/fruta.service';
+
 
 @NgModule({
   declarations: [
@@ -33,15 +38,18 @@ import { FrutaService } from './providers/fruta.service';
     VideojuegoPipe,
     EjercicioFrutasComponent,
     FrutaCardComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //peticiones HTTP
   ],
   providers: [],
   bootstrap: [AppComponent],
-  FrutaService
+  FrutaService,
+  TareaService
 })
 export class AppModule { }

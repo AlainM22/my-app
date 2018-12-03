@@ -1,0 +1,8 @@
+<p>Ejemplo de crear un <b>Provider</b> o Service para realizar las operaciones de CRUD contra un <b>Servicio Rest</b></p>
+
+{{tareas | json}}
+
+<br>
+<ul class="list-group mt-3">
+  <li class="list-group-item" *ngFor="let t of tareas">{{t.id}} - {{t.titulo}} -> <span class="{{(t.terminado) ? 'text-success font-weight-bold' : 'text-danger font-weight-bold'}}">{{(t.terminado) ? 'Terminado' : 'TODO'}}</span></li>
+</ul>

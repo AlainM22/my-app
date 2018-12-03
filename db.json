@@ -1,0 +1,7 @@
+{
+    "tareas":[
+        {"id": 1, "titulo": "Cambiar Readme", "terminado": false},
+        {"id": 2, "titulo": "Carrito Compra", "terminado": true},
+        {"id": 3, "titulo": "Formularios Reactivos", "terminado": false}
+    ]
+}

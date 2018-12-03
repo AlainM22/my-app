@@ -54,24 +54,24 @@ export class ComparadorComponent implements OnInit {
     return total;
   }
 
-  sumarProducto(p: Producto, index: number){    
+  /*sumarProducto(p: Producto, index: number){    
     p.cantidad++;
     this.carrito[index] = p;
-  }
+  }*/
 
-  restarProducto(p: Producto, index: number){
+  /*restarProducto(p: Producto, index: number){
     if ( p.cantidad > 1 ){
       p.cantidad--;
       this.carrito[index] = p;
     }else{
       this.eliminarProducto(p, index);
     }
-  }
+  }*/
 
-  eliminarProducto(p: Producto, index: number){
+  /*eliminarProducto(p: Producto, index: number){
     p.cantidad = 1;
     this.carrito.splice(index,1);
-  }
+  }*/
 
   actualizarCarro( event: Event) {
     console.debug('ComparadorComponent actualizarCarro recibimos evento del componente hijo');
