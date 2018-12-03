@@ -1,53 +1,25 @@
-<div class="container">
-  <div class="row mb-3">
+<div class="row">
 
-    <div class="col-4"> <!-- Frutas -->
-        <div class="card">
-            <div class="card-header">
-                <h2 class="card-title">Frutas</h2>
-            </div>
-            <div class="card-body">
-                <ol>
-                  <li *ngFor="let f of frutas"><button (click)="seleccionar(f)" class="btn btn-outline-primary mb-2 w-75">{{f.nombre}}</button></li>
-                </ol>
-            </div>
-        </div><!-- .card -->
-    </div><!-- .col-5-->
 
-    <div class="col-4"> <!-- Fruta 1 -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">1ª Fruta</h3>
-            </div>
-            <div class="card-body">
-                <app-fruta-card [_fruta]="f1"></app-fruta-card>
-            </div>
+  <div class="col-2 bg-light">
+      <ul class="list-group">
+          <li *ngFor="let f of frutas" 
+              (click)="seleccionar(f)" 
+              class="list-group-item" 
+              [class.active]="f == f1 || f == f2">{{f.nombre}}</li>         
+      </ul>
+  </div>
+
+  <div class="col-8">
+    <div class="row">
+        <div class="col">
+            <p>Registrar Eventos <b>@Ouput</b>. El componente padre puede recibir eventos del componente hijo. Mirar consola.</p>
         </div>
-    </div><!-- .col-4 -->
+    </div>    
+    <div class="row">
+        <div class="col-6"><app-fruta-card [_fruta]="f1" [_fruta2]="f2" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>
+        <div class="col-6"><app-fruta-card [_fruta]="f2" [_fruta2]="f1" (clikCompra)="actualizarCarro($event)"></app-fruta-card></div>        
+     </div> 
+  </div>
 
-    <div class="col-4"> <!-- Fruta 2 -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">2ª Fruta</h3>
-            </div>
-            <div class="card-body">
-                <app-fruta-card [_fruta]="f2" ></app-fruta-card>
-            </div>
-        </div>
-    </div><!-- .col-4 -->
-  </div><!-- .row -->
-
-  <div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Comparaciones</h3>
-            </div>
-            <div class="card-body">
-                <p class="card-text">Precio:</p>
-                <p class="card-text">Calorias:</p>
-            </div>
-        </div>
-    </div>
-  </div><!-- .row -->
 </div>

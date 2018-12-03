@@ -43,7 +43,6 @@ export class EjercicioFrutasComponent implements OnInit {
     f.calorias = 500;
     f.colores = ['Amarillo', 'Negro'];
     f.oferta = true;
-    f.descuento = 10;
     f.imagen = 'http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg';
     this.frutas.push(f);
 
@@ -52,8 +51,6 @@ export class EjercicioFrutasComponent implements OnInit {
     f.precio = 2;
     f.calorias = 350;
     f.colores = ['Amarillo', 'Verde'];
-    f.oferta = false;
-    f.descuento = 20;
     f.imagen = 'http://www.cajanature.com/405-large_default/pera-ecologica-.jpg';
     this.frutas.push(f);
 
@@ -63,7 +60,6 @@ export class EjercicioFrutasComponent implements OnInit {
     f.calorias = 100;
     f.colores = ['Rosa', 'Rojo', 'Verde'];
     f.oferta = true;
-    f.descuento = 50;
     f.imagen = 'http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg';
     this.frutas.push(f);
   }
