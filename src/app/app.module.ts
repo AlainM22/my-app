@@ -1,7 +1,7 @@
 // Modulos de Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // Componentes
@@ -17,6 +17,7 @@ import { EjercicioFrutasComponent } from './components/ejercicio-frutas/ejercici
 import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -42,12 +43,14 @@ import { FrutaService } from './providers/fruta.service';
     FrutaCardComponent,
     ComparadorComponent,
     TareaComponent,
-    TareasPipe
+    TareasPipe,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, // banana in a box [(ngModule)]
+    ReactiveFormsModule,
     HttpClientModule //peticiones HTTP
   ],
   providers: [
