@@ -20,10 +20,12 @@ import { TareaComponent } from './components/tarea/tarea.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
+import { TareasPipe } from './pipes/tareas.pipe';
 
 // Providers o servicios
 import { TareaService } from './providers/tarea.service';
 import { FrutaService } from './providers/fruta.service';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { FrutaService } from './providers/fruta.service';
     EjercicioFrutasComponent,
     FrutaCardComponent,
     ComparadorComponent,
-    TareaComponent
+    TareaComponent,
+    TareasPipe
   ],
   imports: [
     BrowserModule,
@@ -47,9 +50,9 @@ import { FrutaService } from './providers/fruta.service';
     FormsModule,
     HttpClientModule //peticiones HTTP
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
   FrutaService,
-  TareaService
+  TareaService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

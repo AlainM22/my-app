@@ -1,13 +1,66 @@
 {
-    "tareas":[
-        {"id": 1, "titulo": "Cambiar Readme", "terminado": false},
-        {"id": 2, "titulo": "Carrito Compra", "terminado": true},
-        {"id": 3, "titulo": "Formularios Reactivos", "terminado": false}
-    ],
-
-    "frutas":[
-        {"nombre": "Banana", "precio": 3.5, "calorias": 500, "colores":["Amarillo", "Negro"], "oferta": true, "imagen": "http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg", "descuento": 0, "cantidad": 0 },
-        {"nombre": "Pera", "precio": 2, "calorias": 350, "colores":["Amarillo", "Verde"], "oferta": false, "imagen": "http://www.cajanature.com/405-large_default/pera-ecologica-.jpg", "descuento": 0, "cantidad": 0 },
-        {"nombre": "Fresa", "precio": 0.75, "calorias": 100, "colores":["Rosa", "Rojo", "Verde"], "oferta": true, "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg", "descuento": 0, "cantidad": 0 }
-    ]
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Cambiar Readme",
+      "terminado": false
+    },
+    {
+      "id": 2,
+      "titulo": "Carrito Compra",
+      "terminado": true
+    },
+    {
+      "id": 3,
+      "titulo": "Formularios Reactivos",
+      "terminado": false
+    },
+    {
+      "titulo": "Nueva",
+      "terminado": true,
+      "id": 4
+    }
+  ],
+  "frutas": [
+    {
+      "nombre": "Banana",
+      "precio": 3.5,
+      "calorias": 500,
+      "colores": [
+        "Amarillo",
+        "Negro"
+      ],
+      "oferta": true,
+      "imagen": "http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg",
+      "descuento": 0,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Pera",
+      "precio": 2,
+      "calorias": 350,
+      "colores": [
+        "Amarillo",
+        "Verde"
+      ],
+      "oferta": false,
+      "imagen": "http://www.cajanature.com/405-large_default/pera-ecologica-.jpg",
+      "descuento": 0,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Fresa",
+      "precio": 0.75,
+      "calorias": 100,
+      "colores": [
+        "Rosa",
+        "Rojo",
+        "Verde"
+      ],
+      "oferta": true,
+      "imagen": "http://libbys.es/wordpress/wp-content/uploads/2018/05/fresas.jpg",
+      "descuento": 0,
+      "cantidad": 0
+    }
+  ]
 }
