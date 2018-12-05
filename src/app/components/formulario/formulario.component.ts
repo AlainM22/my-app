@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
 
@@ -11,6 +11,7 @@ import { FrutaService } from 'src/app/providers/fruta.service';
 export class FormularioComponent implements OnInit {
 
   formulario: FormGroup; //formulario para agrupar inputs == FormControl
+  colores: FormArray; //Arrays de FormControl
 
   constructor(public frutaService : FrutaService) { 
     console.trace('FormularioComponent constructor');
@@ -50,13 +51,16 @@ export class FormularioComponent implements OnInit {
           ]
         ),
         imagen: new FormControl(
-          "https://picsum.photos/300/300/?random",//valor inicial
+          "https://i.pinimg.com/originals/c3/3e/a1/c33ea15a11c06ddb84fb8d9560d32808.png",//valor inicial
           [//validaciones
             Validators.required,
             Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')
           ]
-        )
+        ),
+        colores: new FormArray([this.crearColorFormGroup()], Validators.minLength(1))
     });
+
+    this.colores = this.formulario.get('colores') as FormArray;
   }
 
   ngOnInit() {
@@ -89,10 +93,32 @@ export class FormularioComponent implements OnInit {
     }
     
     fruta.imagen = this.formulario.controls.imagen.value;
+    fruta.cantidad = 0;
+    fruta.colores = this.formulario.controls.colores.value;
 
     this.frutaService.add(fruta).subscribe(data =>{
       console.debug(data);
     });
+  }
+
+  crearColorFormGroup(): FormGroup{
+    return new FormGroup({
+      color: new FormControl('Verde', [Validators.required, Validators.minLength(2), Validators.maxLength(15)])
+    })
+  }
+
+  nuevoColor(){
+    console.trace('FormularioComponent nuevoColor');
+    let aColores = this.formulario.get('colores') as FormArray;
+    aColores.push(this.crearColorFormGroup());
+  }
+
+  eliminarColor(index: number){
+    console.trace('FormularioComponent eliminarColor');
+    let arrayColores = this.formulario.get('colores') as FormArray;
+    if(arrayColores.length > 1){
+      arrayColores.removeAt(index);
+    }
   }
 
 }

@@ -27,7 +27,8 @@ export class FrutaService {
       "calorias": fruta.calorias,
       "oferta": fruta.oferta,
       "descuento": fruta.descuento,
-      "imagen": fruta.imagen
+      "imagen": fruta.imagen,
+      "colores": fruta.colores
     };
 
     const httpOptions = {
