@@ -64,8 +64,8 @@
       "nombre": "Melocoton",
       "precio": 4.5,
       "calorias": 150,
-      "oferta": false,
-      "descuento": 0,
+      "oferta": true,
+      "descuento": 15,
       "imagen": "http://www.frutaspoveda.com/wp-content/uploads/2018/04/Fruta-de-hueso.jpg",
       "id": 4
     }

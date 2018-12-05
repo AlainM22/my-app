@@ -26,33 +26,33 @@ export class FormularioComponent implements OnInit {
         ]
       ),
       precio: new FormControl(
-        '0', //valor inicial
+        '0.1', //valor inicial
         [ //validaciones
           Validators.required,
-          Validators.minLength(0),
-          Validators.maxLength(5)
+          Validators.min(0.1),
+          Validators.max(999)
         ]
       ),
       calorias: new FormControl(
-        "1", //valor inicial
+        "0.1", //valor inicial
         [//validaciones
           Validators.required,
-          Validators.minLength(0),
-          Validators.maxLength(600)
+          Validators.min(0.1),
+          Validators.max(600)
         ]
         ),
         oferta: new FormControl(false),
         descuento: new FormControl(
-          "0", //valor inicial
+          "5", //valor inicial
           [//validaciones
-            Validators.minLength(0),
-            Validators.maxLength(10)
+            Validators.min(5),
+            Validators.max(90)
           ]
         ),
         imagen: new FormControl(
           "",//valor inicial
           [//validaciones
-
+            Validators.required
           ]
         )
     });
@@ -79,7 +79,14 @@ export class FormularioComponent implements OnInit {
     fruta.precio = this.formulario.controls.precio.value;
     fruta.calorias = this.formulario.controls.calorias.value;
     fruta.oferta = this.formulario.controls.oferta.value;
-    fruta.descuento = this.formulario.controls.descuento.value;
+    
+    //Aplicamos el descuento si la oferta esta activa, si no se manda un 0
+    if(this.formulario.controls.oferta.value){
+      fruta.descuento = this.formulario.controls.descuento.value;
+    }else{
+      fruta.descuento = 0;
+    }
+    
     fruta.imagen = this.formulario.controls.imagen.value;
 
     this.frutaService.add(fruta).subscribe(data =>{
