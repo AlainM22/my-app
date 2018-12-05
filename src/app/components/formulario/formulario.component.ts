@@ -50,9 +50,10 @@ export class FormularioComponent implements OnInit {
           ]
         ),
         imagen: new FormControl(
-          "",//valor inicial
+          "https://picsum.photos/300/300/?random",//valor inicial
           [//validaciones
-            Validators.required
+            Validators.required,
+            Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')
           ]
         )
     });
