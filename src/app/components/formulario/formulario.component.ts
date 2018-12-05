@@ -12,9 +12,11 @@ export class FormularioComponent implements OnInit {
 
   formulario: FormGroup; //formulario para agrupar inputs == FormControl
   colores: FormArray; //Arrays de FormControl
+  mensajeInfo: string;
 
   constructor(public frutaService : FrutaService) { 
     console.trace('FormularioComponent constructor');
+    this.mensajeInfo = "";
 
     // agrupacion de controles == formulario
     this.formulario = new FormGroup({
@@ -98,6 +100,7 @@ export class FormularioComponent implements OnInit {
 
     this.frutaService.add(fruta).subscribe(data =>{
       console.debug(data);
+      this.mensajeInfo = "Fruta guardada correctamente";
     });
   }
 
