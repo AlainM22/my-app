@@ -38,7 +38,7 @@
 
                     <div class="form-group">
                         <label for="calorias">Calorias</label>
-                        <input type="number" formControlName="calorias" class="form-control" id="calorias" name="calorias" placeholder="Calorias de la fruta" step="0.1">
+                        <input type="number" formControlName="calorias" class="form-control" id="calorias" name="calorias" placeholder="Calorias de la fruta" step="25">
                         <small *ngIf="formulario.controls.calorias.invalid && formulario.controls.calorias.touched" class="form-text text-danger">Minimo 0,1 Kcal, Maximo 600 Kcal</small>
                         <small *ngIf="formulario.controls.calorias.valid && formulario.controls.calorias.touched" class="form-text text-success">Correcto</small>  
                     </div>

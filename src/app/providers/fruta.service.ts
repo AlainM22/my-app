@@ -28,6 +28,7 @@ export class FrutaService {
       "oferta": fruta.oferta,
       "descuento": fruta.descuento,
       "imagen": fruta.imagen,
+      "cantidad": fruta.cantidad,
       "colores": fruta.colores
     };
 

@@ -35,7 +35,7 @@ export class FormularioComponent implements OnInit {
         ]
       ),
       calorias: new FormControl(
-        "0.1", //valor inicial
+        "25", //valor inicial
         [//validaciones
           Validators.required,
           Validators.min(0.1),
