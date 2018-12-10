@@ -72,36 +72,14 @@
     },
     {
       "nombre": "Limon",
-      "precio": 2.6,
+      "precio": 1.9,
       "calorias": 250,
       "oferta": true,
-      "descuento": 40,
+      "descuento": 30,
       "imagen": "https://i.pinimg.com/originals/c3/3e/a1/c33ea15a11c06ddb84fb8d9560d32808.png",
       "cantidad": 0,
-      "colores": [
-        {
-          "color": "Verde"
-        },
-        {
-          "color": "Amarillo"
-        }
-      ],
+      "colores": [],
       "id": 4
-    },
-    {
-      "nombre": "Melocoton",
-      "precio": 4.5,
-      "calorias": 150,
-      "oferta": true,
-      "descuento": 5,
-      "imagen": "http://www.frutaspoveda.com/wp-content/uploads/2018/04/Fruta-de-hueso.jpg",
-      "cantidad": 0,
-      "colores": [
-        {
-          "color": "Verde"
-        }
-      ],
-      "id": 5
     }
   ]
 }

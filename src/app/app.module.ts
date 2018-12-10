@@ -18,6 +18,10 @@ import { FrutaCardComponent } from './components/fruta-card/fruta-card.component
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { GestorFrutasComponent } from './components/gestor-frutas/gestor-frutas.component';
+import { PaginaDetalleComponent } from './components/pagina-detalle/pagina-detalle.component';
+import { BackofficeComponent } from './components/backoffice/backoffice.component';
+import { LoginComponent } from './components/login/login.component';
 
 // Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -26,8 +30,10 @@ import { TareasPipe } from './pipes/tareas.pipe';
 // Providers o servicios
 import { TareaService } from './providers/tarea.service';
 import { FrutaService } from './providers/fruta.service';
+import { LoginService } from './providers/login.service';
 
-
+// Guards
+import { BackofficeGuard } from './guards/backoffice.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,11 @@ import { FrutaService } from './providers/fruta.service';
     ComparadorComponent,
     TareaComponent,
     TareasPipe,
-    FormularioComponent
+    FormularioComponent,
+    GestorFrutasComponent,
+    PaginaDetalleComponent,
+    BackofficeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +65,9 @@ import { FrutaService } from './providers/fruta.service';
   ],
   providers: [
   FrutaService,
-  TareaService],
+  TareaService,
+  LoginService,
+  BackofficeGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

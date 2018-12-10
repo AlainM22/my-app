@@ -17,6 +17,10 @@
 
  <!-- bootstrap toggle-->
  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+ <!-- Datatable -->
+ <link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -31,5 +35,14 @@
 
   <!-- bootstrap toggle-->
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+  <!-- Datatable -->
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+  <script>
+    $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+  </script>
 </body>
 </html>
